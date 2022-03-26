@@ -1,7 +1,7 @@
 class Solution {
 public:
     string getSmallestString(int n, int k) {
-        //if(n==k)
+       
         string s="";
         
         
