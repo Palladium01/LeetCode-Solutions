@@ -66,10 +66,10 @@ public:
         for(int i=0;i<graph.size();++i)
             adj[i]=graph[i];
         
-       for(int j=0;j<graph.size();++j)
+       for(int i=0;i<graph.size();++i)
        {
-           if(color[j]==-1)
-               if(!bfs(j,adj,color))
+           if(color[i]==-1)
+               if(!bfs(i,adj,color))
                    return false;
        }
         return true;
