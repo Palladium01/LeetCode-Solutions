@@ -1,6 +1,6 @@
 class Solution {
 public:
-    vector<int>vis,col;
+   /* vector<int>vis,col;
     bool dfs(int v, int c, vector<vector<int>>& graph){
         vis[v]=1;
         col[v]=c;
@@ -29,6 +29,49 @@ public:
             }
         }
         
+        return true;
+    }*/
+    
+    bool bfs(int src,vector<vector<int>> adj, int color[])
+    {
+        queue<int> q;
+        q.push(src);
+        color[src]=0;
+        while(!q.empty())
+        {
+            int node=q.front();
+            q.pop();
+            
+            for(auto it:adj[node])
+            {
+                if(color[it]==-1)
+                {
+                    color[it]=1-color[node];
+                    q.push(it);
+                }
+                
+                else if(color[it]==color[node])
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    
+    bool isBipartite(vector<vector<int>>& graph) {
+        vector<vector<int>> adj(graph.size());
+        int color[graph.size()];
+        memset(color,-1,sizeof color);
+        for(int i=0;i<graph.size();++i)
+            adj[i]=graph[i];
+        
+       for(int j=0;j<graph.size();++j)
+       {
+           if(color[j]==-1)
+               if(!bfs(j,adj,color))
+                   return false;
+       }
         return true;
     }
 };
