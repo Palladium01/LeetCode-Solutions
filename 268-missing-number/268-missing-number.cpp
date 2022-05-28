@@ -1,7 +1,7 @@
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
-        sort(nums.begin(), nums.end());
+      /*  sort(nums.begin(), nums.end());
       
         
         for(int i=0;i<nums.size();++i)
@@ -10,6 +10,13 @@ public:
                 return i;
           
         }
-        return nums.size();
+        return nums.size();*/
+        
+        int res=nums.size();
+        for(int i=0;i<nums.size();++i)
+        {
+            res^=nums[i]^i;
+        }
+        return res;
     }
 };
