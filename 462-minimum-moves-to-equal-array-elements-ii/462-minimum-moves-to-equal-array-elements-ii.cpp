@@ -4,11 +4,8 @@ public:
         sort(nums.begin(),nums.end());
         int mid=0;
         int res=0;
-        //if(nums.size()%2==0)
-            mid=nums.size()/2;
         
-       // else
-          //  mid=nums.size()/2+1;
+        mid=nums.size()/2;
         
         for(int i=0;i<nums.size();++i)
         {
