@@ -7,7 +7,7 @@ public:
       if(sum%k!=0)
         return false;
       int s=sum/k;
-      sort(begin(nums),end(nums),greater<int>());// For avoid extra calculation
+     // sort(begin(nums),end(nums),greater<int>());// For avoid extra calculation
       return is_possible(nums,0,s,k,0,vis);
   }
  bool is_possible(vector<int>&nums,int curr,int sum,int k,int start,vector<bool>&vis)
